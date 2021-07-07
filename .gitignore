@@ -58,3 +58,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+Block-Destroyer/Library/
+Block-Destroyer/Temp/
+Block-Destroyer/obj/
+Block-Destroyer/Logs/
