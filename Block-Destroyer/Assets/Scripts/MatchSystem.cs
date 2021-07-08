@@ -7,17 +7,6 @@ public class MatchSystem : MonoBehaviour
     private readonly Queue<Cell> _cellsToProcess = new Queue<Cell>();
     private readonly HashSet<Cell> _processedCells = new HashSet<Cell>();
     private readonly List<Chip> _matchedChips = new List<Chip>();
-
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
     public void TryConsumeMatch(Cell originCell)
     {
         if (originCell?.Chip == null)

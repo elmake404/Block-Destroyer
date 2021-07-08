@@ -8,25 +8,30 @@ public class PlayerAtack : MonoBehaviour
     private MatchSystem _matchSystem;
     [SerializeField]
     private LayerMask _layerMask;
+    private PlayerMove _playerMove;
+
+    [SerializeField]
+    private float _timeBeforeAttack;
     void Start()
     {
-        
+        _playerMove = GetComponent<PlayerMove>();
+        StartCoroutine(Shooting());
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Atack(Vector3.down);
-        }
-    }
     private void Atack(Vector3 direction)
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, direction, out hit,1f,_layerMask))
         {
-            Debug.Log(123);
            _matchSystem.TryConsumeMatch( hit.collider.GetComponent<Chip>().Cell);
+        }
+    }
+    private IEnumerator Shooting()
+    {
+        while (true)
+        {
+            Atack(_playerMove.DirectionTravel);
+            yield return new WaitForSeconds(_timeBeforeAttack);
         }
     }
 }
