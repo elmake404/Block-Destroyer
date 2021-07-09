@@ -61,6 +61,7 @@ public class GridSystem : MonoBehaviour
 
                 _grid[CalculateIndex(i, j)] = cell;
                 cell.transform.SetParent(transform);
+                cell.name = "Cell " + i + "x" + j;
                 //cell.PosToGrid = postoGrid;
             }
         }
@@ -81,7 +82,6 @@ public class GridSystem : MonoBehaviour
         }
         return null;
     }
-
     private int CalculateIndex(int x, int y)
     {
         return y * _columnsCount + x;
@@ -115,5 +115,14 @@ public class GridSystem : MonoBehaviour
             );
         return gridPos;
     }
-
+    public void UpdateStateCell()
+    {
+        foreach (var item in _grid)
+        {
+            if (item.Chip != null)
+            {
+                item.Chip.СheckingСhanges();
+            }
+        }
+    }
 }

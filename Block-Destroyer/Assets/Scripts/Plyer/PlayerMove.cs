@@ -121,7 +121,9 @@ public class PlayerMove : MonoBehaviour
 
         Vector3 direction = (target - transform.position).normalized * _speed;
         direction.y = _rbMain.velocity.y;
-        _rbMain.velocity = direction;
+       /// надо поработаьть с колецией 
+        _rbMain.velocity =_legs.CheckDirection( direction);
+
         DirectionTravel = direction;
     }
     private void OnDrawGizmosSelected()

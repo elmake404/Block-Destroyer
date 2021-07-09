@@ -7,6 +7,7 @@ public class Cell : MonoBehaviour
     public delegate void CellChip(Cell cell,Chip chip);
     public event CellChip OnChipChanged;
     public Vector2Int PosToGrid { get; private set; }
+    [SerializeField]
     private Chip _chip;
 
     public Chip Chip
@@ -14,17 +15,12 @@ public class Cell : MonoBehaviour
         get { return _chip; }
         set
         {
-            Chip oldChip = _chip;
             _chip = value;
 
             if (_chip != null)
             {
                 _chip.transform.SetParent(transform);
-                //Cell cellNeghbour = GridSystem.Instance.GetCell(PosToGrid+Vector2Int.down);
-                //cellNeghbour.OnChipChanged += _chip.NeighborChange;
             }
-
-            OnChipChanged?.Invoke(this, _chip);
         }
     }
 

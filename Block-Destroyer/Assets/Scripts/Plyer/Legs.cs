@@ -4,22 +4,39 @@ using UnityEngine;
 
 public class Legs : MonoBehaviour
 {
-    private List<GameObject> _floor = new List<GameObject>();
-
-    public bool IsFloor { get { return _floor.Count > 0; } }
+    private List<Transform> _walls = new List<Transform>();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer==8)
+        if (other.gameObject.layer == 8)
         {
-            _floor.Add(other.gameObject);
+            _walls.Add(other.transform);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (_floor.Contains(other.gameObject))
+        if (other.gameObject.layer == 8)
         {
-            _floor.Remove(other.gameObject);
+            _walls.Remove(other.transform);
         }
+    }
+    public Vector3 CheckDirection(Vector3 oldDirection)
+    {
+        foreach (var wall in _walls)
+        {
+            if (wall != null)
+            {
+                Vector3 ParentPosition = transform.parent.position;
+                Vector3 target = wall.position;
+                target.y = ParentPosition.y;
+                Vector3 DirectionWall = (target - ParentPosition).normalized;
+                if (Mathf.Round(DirectionWall.x) == Mathf.Round(oldDirection.normalized.x))
+                {
+                    oldDirection.x = 0;
+                    break;
+                }
+            }
+        }
+        return oldDirection;
     }
 }

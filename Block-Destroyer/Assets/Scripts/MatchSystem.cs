@@ -36,6 +36,7 @@ public class MatchSystem : MonoBehaviour
         _cellsToProcess.Clear();
         _processedCells.Clear();
         _matchedChips.Clear();
+        GridSystem.Instance.UpdateStateCell();
     }
     private void TryEnqueueNeighbour(Cell cell, Vector2Int neighbourOffset)
     {

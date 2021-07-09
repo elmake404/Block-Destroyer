@@ -7003,6 +7003,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7069,12 +7070,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.42, z: -12.48}
+  m_LocalPosition: {x: 4.5, y: 25.63, z: -21.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510cdb8e8d41d8047be8016766e8a896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraSmoothness: 0.3
 --- !u!1 &965466694
 GameObject:
   m_ObjectHideFlags: 0
@@ -15539,6 +15553,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4215483794039922067, guid: b439714cdbc4d214393a444f85a0cbce,
+        type: 3}
+      propertyPath: m_Mass
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4215483794039922069, guid: b439714cdbc4d214393a444f85a0cbce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15547,7 +15566,7 @@ PrefabInstance:
     - target: {fileID: 4215483794039922069, guid: b439714cdbc4d214393a444f85a0cbce,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 25.64
+      value: 25.24
       objectReference: {fileID: 0}
     - target: {fileID: 4215483794039922069, guid: b439714cdbc4d214393a444f85a0cbce,
         type: 3}
@@ -15604,10 +15623,5 @@ PrefabInstance:
       propertyPath: _matchSystem
       value: 
       objectReference: {fileID: 104266031}
-    - target: {fileID: 4215483794039922153, guid: b439714cdbc4d214393a444f85a0cbce,
-        type: 3}
-      propertyPath: _timeBeforeAttack
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b439714cdbc4d214393a444f85a0cbce, type: 3}
