@@ -138,9 +138,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e851cd6a9ce2c94a8c24a9da0fb783d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _colorId: 3
   _cell: {fileID: 0}
   _moveChip: {fileID: 8312632992155133304}
+  _hangTimer: 1
+  _colorId: 3
 --- !u!114 &8312632992155133304
 MonoBehaviour:
   m_ObjectHideFlags: 0
