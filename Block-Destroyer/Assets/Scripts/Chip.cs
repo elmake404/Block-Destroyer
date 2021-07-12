@@ -7,6 +7,9 @@ public class Chip : MonoBehaviour
     private Cell _cell;
     [SerializeField]
     private MoveChip _moveChip;
+    [SerializeField]
+    private Animator _animator;
+
     private bool _isUnstable = false;
     [SerializeField]
     private float _hangTimer;
@@ -42,6 +45,8 @@ public class Chip : MonoBehaviour
         {
             if (_hangTime < 0)
             {
+                _animator.SetBool("Rattling", false);
+
                 Cell cell = GridSystem.Instance.GetCell(Cell.PosToGrid + Vector2Int.down);
                 if (cell.Chip == null)
                 {
@@ -51,6 +56,10 @@ public class Chip : MonoBehaviour
 
                     Cell.Chip = this;
                     _isUnstable = false;
+                }
+                else
+                {
+                    СheckingСhanges();
                 }
             }
             else
@@ -92,13 +101,9 @@ public class Chip : MonoBehaviour
     {
         if (!CommitCheck())
         {
+            _animator.SetBool("Rattling",true);
             _isUnstable = true;
             IsSteadiness = false;
-            //Cell cell = GridSystem.Instance.GetCell(Cell.PosToGrid + Vector2Int.down);
-            //_moveChip.ActivationMove(cell.transform);
-            //Cell.Chip = null;
-            //_cell = cell;
-            //Cell.Chip = this;
         }
         else
         {
