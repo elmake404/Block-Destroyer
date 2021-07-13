@@ -64,6 +64,7 @@ MonoBehaviour:
   _hangTimer: 1
   _colorId: 4
   Health: Infinity
+  IsSteadiness: 0
 --- !u!114 &8312632992155133304
 MonoBehaviour:
   m_ObjectHideFlags: 0
