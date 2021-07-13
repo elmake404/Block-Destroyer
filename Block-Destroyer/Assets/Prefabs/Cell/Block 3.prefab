@@ -62,10 +62,8 @@ MonoBehaviour:
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
   _hangTimer: 1
-  _hangTime: 0
   _colorId: 4
   Health: Infinity
-  IsSteadiness: 0
 --- !u!114 &8312632992155133304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +93,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
+      objectReference: {fileID: 2100000, guid: b0d2c610ffb91e841a979777fd3839cf, type: 2}
     - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_LocalPosition.x

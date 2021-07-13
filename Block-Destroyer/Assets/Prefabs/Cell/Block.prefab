@@ -62,10 +62,8 @@ MonoBehaviour:
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
   _hangTimer: 1
-  _hangTime: 0
   _colorId: 1
   Health: 1
-  IsSteadiness: 0
 --- !u!114 &8312632992155133304
 MonoBehaviour:
   m_ObjectHideFlags: 0
