@@ -15,10 +15,6 @@ public class Cell : MonoBehaviour
         get { return _chip; }
         set
         {
-            if (transform.childCount>1)
-            {
-                Debug.LogError(name);
-            }
             _chip = value;
 
             if (_chip != null)

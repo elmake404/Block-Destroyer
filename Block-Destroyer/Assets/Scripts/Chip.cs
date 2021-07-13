@@ -18,6 +18,7 @@ public class Chip : MonoBehaviour
     [SerializeField]
     private int _colorId;
 
+    public float Health;
     public int ColorId => _colorId;
     public bool IsSteadiness /*{ get; private set; }*/;
 

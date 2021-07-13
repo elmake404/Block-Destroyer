@@ -11,7 +11,7 @@ public class PlayerAtack : MonoBehaviour
     private PlayerMove _playerMove;
 
     [SerializeField]
-    private float _timeBeforeAttack;
+    private float _timeBeforeAttack,_attackDamage;
     void Start()
     {
         _playerMove = GetComponent<PlayerMove>();
@@ -30,7 +30,7 @@ public class PlayerAtack : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, direction, out hit,1f,_layerMask))
         {
-           _matchSystem.TryConsumeMatch( hit.collider.GetComponent<Chip>().Cell);
+           _matchSystem.TryConsumeMatch( hit.collider.GetComponent<Chip>().Cell,_attackDamage);
         }
     }
     private IEnumerator Shooting()
