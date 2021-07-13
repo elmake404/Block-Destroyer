@@ -9,6 +9,7 @@ public class Chip : MonoBehaviour
     private MoveChip _moveChip;
     [SerializeField]
     private Animator _animator;
+    private Chip[] _chopsGroup;
 
     private bool _isUnstable = false;
     [SerializeField]
@@ -19,7 +20,7 @@ public class Chip : MonoBehaviour
 
     public float Health;
     public int ColorId => _colorId;
-    public bool IsSteadiness { get; private set; }
+    public bool IsSteadiness /*{ get; private set; }*/;
 
     public Cell Cell
     {
@@ -35,14 +36,17 @@ public class Chip : MonoBehaviour
 
     void Start()
     {
+        _chopsGroup = MatchSystem.Instance.GetGroup(Cell);
+        CommitFloor();
         _hangTime = _hangTimer;
         _moveChip.FinishedTheWay += СheckingСhanges;
     }
 
     void FixedUpdate()
     {
-        if (_isUnstable)
+        if (!_moveChip.enabled && !CommitCheck())
         {
+            //MatchSystem.Instance.GroupStabilityCheck(Cell);
             if (_hangTime < 0)
             {
                 _animator.SetBool("Rattling", false);
@@ -73,43 +77,46 @@ public class Chip : MonoBehaviour
         Cell.Chip = null;
         Destroy(gameObject);
     }
-    private bool CommitCheck()
+    private void CommitFloor()
     {
         Cell cellDown = GridSystem.Instance.GetCell(Cell.PosToGrid + Vector2Int.down);
         if (cellDown == null || (cellDown.Chip != null && cellDown.Chip.IsSteadiness))
-            return true;
-        else
-            return false;
-
-        //Queue<Cell> cells = new Queue<Cell>();
-        //cells.Enqueue(GridSystem.Instance.GetCell(Cell.PosToGrid + Vector2Int.left));
-        //cells.Enqueue(GridSystem.Instance.GetCell(Cell.PosToGrid + Vector2Int.right));
-        //cells.Enqueue(GridSystem.Instance.GetCell(Cell.PosToGrid + Vector2Int.up));
-        //while (cells.Count>0)
-        //{
-        //    Cell cell = cells.Dequeue();
-        //    if (cell!=null)
-        //    {
-        //        if (cell.Chip.ColorId==ColorId)
-        //        {
-
-        //        }
-        //    }
-        //}
-    }
-    public void СheckingСhanges()
-    {
-        if (!CommitCheck())
-        {
-            _animator.SetBool("Rattling",true);
-            _isUnstable = true;
-            IsSteadiness = false;
-        }
-        else
         {
             _hangTime = _hangTimer;
             IsSteadiness = true;
-            _isUnstable = false;
         }
+        else
+            IsSteadiness = false;
+
     }
+    private bool CommitCheck()
+    {
+        if (IsSteadiness || CommitCheckGroup())
+            return true;
+        else
+            return false;
+    }
+    private bool CommitCheckGroup()
+    {
+        foreach (var item in _chopsGroup)
+        {
+            if (item.IsSteadiness) return true;
+        }
+        return false;
+    }
+    public void InPlace()
+    {
+        _animator.SetBool("Rattling", false);
+
+        _hangTime = _hangTimer;
+        //IsSteadiness = true;
+        _isUnstable = false;
+    }
+
+    public void СheckingСhanges()
+    {
+        CommitFloor();
+        _chopsGroup = MatchSystem.Instance.GetGroup(Cell);
+    }
+
 }

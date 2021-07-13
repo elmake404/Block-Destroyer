@@ -15,15 +15,15 @@ public class PlayerAtack : MonoBehaviour
     void Start()
     {
         _playerMove = GetComponent<PlayerMove>();
-        StartCoroutine(Shooting());
+        //StartCoroutine(Shooting());
     }
 
     private void FixedUpdate()
     {
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    Atack(_playerMove.DirectionTravel);
-        //}
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Atack(_playerMove.DirectionTravel);
+        }
     }
     private void Atack(Vector3 direction)
     {

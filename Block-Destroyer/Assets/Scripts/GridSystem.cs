@@ -27,10 +27,6 @@ public class GridSystem : MonoBehaviour
         SpawnChips();
     }
 
-    void Update()
-    {
-
-    }
     //private void OnValidate()
     //{
     //    if (_grid == null || (_grid.Length != _columnsCount * _rowsCount))

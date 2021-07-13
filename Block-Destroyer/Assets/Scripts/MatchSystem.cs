@@ -4,51 +4,62 @@ using UnityEngine;
 
 public class MatchSystem : MonoBehaviour
 {
-    private readonly Queue<Cell> _cellsToProcess = new Queue<Cell>();
-    private readonly HashSet<Cell> _processedCells = new HashSet<Cell>();
-    private readonly List<Chip> _matchedChips = new List<Chip>();
-    public void TryConsumeMatch(Cell originCell, float damage)
+    public static MatchSystem Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    public Chip[] GetGroup(Cell originCell)
     {
         if (originCell?.Chip == null)
         {
-            return;
+            return null;
         }
-        originCell.Chip.Health -= damage;
-        if (originCell.Chip.Health<=0)
+
+        Queue<Cell> cellsToProcess = new Queue<Cell>();
+        HashSet<Cell> processedCells = new HashSet<Cell>();
+        List<Chip> matchedChips = new List<Chip>();
+
+        cellsToProcess.Enqueue(originCell);
+        processedCells.Add(originCell);
+
+        while (cellsToProcess.Count > 0)
         {
-            _cellsToProcess.Enqueue(originCell);
-            _processedCells.Add(originCell);
+            Cell cell = cellsToProcess.Dequeue();
+            matchedChips.Add(cell.Chip);
 
-            while (_cellsToProcess.Count > 0)
-            {
-                Cell cell = _cellsToProcess.Dequeue();
-                _matchedChips.Add(cell.Chip);
 
-                TryEnqueueNeighbour(cell, Vector2Int.left);
-                TryEnqueueNeighbour(cell, Vector2Int.right);
-                TryEnqueueNeighbour(cell, Vector2Int.up);
-                TryEnqueueNeighbour(cell, Vector2Int.down);
-            }
+            TryEnqueueNeighbour(cell, Vector2Int.left, ref cellsToProcess, ref processedCells);
+            TryEnqueueNeighbour(cell, Vector2Int.right, ref cellsToProcess, ref processedCells);
+            TryEnqueueNeighbour(cell, Vector2Int.up, ref cellsToProcess, ref processedCells);
+            TryEnqueueNeighbour(cell, Vector2Int.down, ref cellsToProcess, ref processedCells);
+        }
+        return matchedChips.ToArray();
+    }
+    private void TryEnqueueNeighbour(Cell cell, Vector2Int neighbourOffset, ref Queue<Cell> cellsToProcess, ref HashSet<Cell> processedCells)
+    {
+        Cell neighbour = GridSystem.Instance.GetCell(cell.PosToGrid + neighbourOffset);
+        if (!processedCells.Contains(neighbour) && neighbour?.Chip != null && cell.Chip.ColorId == neighbour.Chip.ColorId)
+        {
+            processedCells.Add(neighbour);
+            cellsToProcess.Enqueue(neighbour);
+        }
+    }
 
-            foreach (Chip chip in _matchedChips)
+    public void TryConsumeMatch(Cell originCell, float damage)
+    {
+        originCell.Chip.Health -= damage;
+        if (originCell.Chip.Health <= 0)
+        {
+
+            Chip[] chips = GetGroup(originCell);
+
+            foreach (Chip chip in chips)
             {
                 chip.Consume();
             }
 
-            _cellsToProcess.Clear();
-            _processedCells.Clear();
-            _matchedChips.Clear();
             GridSystem.Instance.UpdateStateCell();
         }
     }
-    private void TryEnqueueNeighbour(Cell cell, Vector2Int neighbourOffset)
-    {
-        Cell neighbour = GridSystem.Instance.GetCell(cell.PosToGrid + neighbourOffset);
-        if (!_processedCells.Contains(neighbour) && neighbour?.Chip != null && cell.Chip.ColorId == neighbour.Chip.ColorId)
-        {
-            _processedCells.Add(neighbour);
-            _cellsToProcess.Enqueue(neighbour);
-        }
-    }
-
 }
