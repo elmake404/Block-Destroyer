@@ -13,14 +13,13 @@ public class Chip : MonoBehaviour
     private bool _isUnstable = false;
     [SerializeField]
     private float _hangTimer;
-    [SerializeField]
     private float _hangTime;
     [SerializeField]
     private int _colorId;
 
     public float Health;
     public int ColorId => _colorId;
-    public bool IsSteadiness /*{ get; private set; }*/;
+    public bool IsSteadiness { get; private set; }
 
     public Cell Cell
     {

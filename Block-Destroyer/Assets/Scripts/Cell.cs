@@ -7,7 +7,6 @@ public class Cell : MonoBehaviour
     public delegate void CellChip(Cell cell,Chip chip);
     public event CellChip OnChipChanged;
     public Vector2Int PosToGrid { get; private set; }
-    [SerializeField]
     private Chip _chip;
 
     public Chip Chip
