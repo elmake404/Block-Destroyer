@@ -6,6 +6,8 @@ public class Chip : MonoBehaviour
 {
     private Cell _cell;
     [SerializeField]
+    private ParticleSystem _destroyParticle;
+    [SerializeField]
     private MoveChip _moveChip;
     [SerializeField]
     private Animator _animator;
@@ -75,6 +77,11 @@ public class Chip : MonoBehaviour
     }
     public void Consume()
     {
+        if (_destroyParticle!=null)
+        {
+            ParticleSystem particle = Instantiate(_destroyParticle, transform.position, transform.rotation);
+            particle.Play();
+        }
         Cell.Chip = null;
         Destroy(gameObject);
     }

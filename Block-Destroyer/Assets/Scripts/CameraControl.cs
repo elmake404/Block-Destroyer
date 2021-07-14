@@ -10,8 +10,17 @@ public class CameraControl : MonoBehaviour
         get
         {
             if (_posPlayer == null)
-                _posPlayer = FindObjectOfType<PlayerMove>().transform;
-           
+            {
+                PlayerMove player = FindObjectOfType<PlayerMove>();
+                if (player == null)
+                {
+                    enabled = false;
+                    return Vector3.zero;
+                }
+                else
+                    _posPlayer = player.transform;
+            }
+
             return new Vector3(transform.position.x, _posPlayer.position.y, transform.position.z);
         }
     }
