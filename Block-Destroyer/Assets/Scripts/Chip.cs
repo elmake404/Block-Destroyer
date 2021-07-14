@@ -46,6 +46,8 @@ public class Chip : MonoBehaviour
     {
         if (!_moveChip.enabled && !CommitCheck())
         {
+            _animator.SetBool("Rattling", true);
+
             //MatchSystem.Instance.GroupStabilityCheck(Cell);
             if (_hangTime < 0)
             {

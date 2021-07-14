@@ -66,8 +66,11 @@ public class GridSystem : MonoBehaviour
     {
         for (int i = 0; i < _grid.Length; i++)
         {
-            Chip chip = _spawnerChips.SpawnChips(_grid[i].transform);
-            _grid[i].Chip = chip;
+            if (_grid[i].Chip==null)
+            {
+                Chip chip = _spawnerChips.SpawnChips(_grid[i].transform);
+                _grid[i].Chip = chip;
+            }
         }
     }
     public Cell GetCell(Vector2Int pos)
