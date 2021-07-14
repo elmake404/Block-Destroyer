@@ -5,6 +5,8 @@ using UnityEngine;
 public class MatchSystem : MonoBehaviour
 {
     public static MatchSystem Instance;
+    [SerializeField]
+    private int _minAmountForDestruction;
     private void Awake()
     {
         Instance = this;
@@ -45,7 +47,6 @@ public class MatchSystem : MonoBehaviour
             cellsToProcess.Enqueue(neighbour);
         }
     }
-
     public void TryConsumeMatch(Cell originCell, float damage)
     {
         originCell.Chip.Health -= damage;
@@ -61,5 +62,18 @@ public class MatchSystem : MonoBehaviour
 
             GridSystem.Instance.UpdateStateCell();
         }
+    }
+    public void TryConsumeMatch(Cell originCell)
+    {
+        Chip[] chips = GetGroup(originCell);
+        if (chips.Length>=_minAmountForDestruction)
+        {
+            foreach (Chip chip in chips)
+            {
+                chip.Consume();
+            }
+        }
+
+        GridSystem.Instance.UpdateStateCell();
     }
 }

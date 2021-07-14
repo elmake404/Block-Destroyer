@@ -11,7 +11,6 @@ public class Chip : MonoBehaviour
     private Animator _animator;
     private Chip[] _chopsGroup;
 
-    private bool _isUnstable = false;
     [SerializeField]
     private float _hangTimer;
     private float _hangTime;
@@ -40,6 +39,7 @@ public class Chip : MonoBehaviour
         CommitFloor();
         _hangTime = _hangTimer;
         _moveChip.FinishedTheWay += СheckingСhanges;
+        _moveChip.FinishedTheWay += Atack;
     }
 
     void FixedUpdate()
@@ -59,7 +59,6 @@ public class Chip : MonoBehaviour
                     _cell = cell;
 
                     Cell.Chip = this;
-                    _isUnstable = false;
                 }
                 else
                 {
@@ -81,10 +80,7 @@ public class Chip : MonoBehaviour
     {
         Cell cellDown = GridSystem.Instance.GetCell(Cell.PosToGrid + Vector2Int.down);
         if (cellDown == null || (cellDown.Chip != null && cellDown.Chip.IsSteadiness))
-        {
-            _hangTime = _hangTimer;
             IsSteadiness = true;
-        }
         else
             IsSteadiness = false;
 
@@ -92,7 +88,10 @@ public class Chip : MonoBehaviour
     private bool CommitCheck()
     {
         if (IsSteadiness || CommitCheckGroup())
+        {
+            _hangTime = _hangTimer;
             return true;
+        }
         else
             return false;
     }
@@ -104,15 +103,18 @@ public class Chip : MonoBehaviour
         }
         return false;
     }
+    private void Atack()
+    {
+        if(CommitCheck())
+        MatchSystem.Instance.TryConsumeMatch(Cell);
+    }
     public void InPlace()
     {
         _animator.SetBool("Rattling", false);
 
         _hangTime = _hangTimer;
-        //IsSteadiness = true;
-        _isUnstable = false;
     }
-
+    
     public void СheckingСhanges()
     {
         CommitFloor();
