@@ -33,8 +33,11 @@ public class Cell : MonoBehaviour
     [ContextMenu("Chip Manual Spawn")]
     private void ChipManualSpawn()
     {
-        if (_chipManualSpawn!=null)
+        if (_chipManualSpawn != null)
         {
+            if (Chip != null)
+                DestroyImmediate(Chip.gameObject);
+
             Chip chip = Instantiate(_chipManualSpawn, transform.position, transform.rotation);
             Chip = chip;
         }
@@ -42,6 +45,7 @@ public class Cell : MonoBehaviour
     [ContextMenu("Chip Manual Destroy")]
     private void ChipManualDestroy()
     {
-        DestroyImmediate(Chip.gameObject);
+        if (Chip != null)
+            DestroyImmediate(Chip.gameObject);
     }
 }
