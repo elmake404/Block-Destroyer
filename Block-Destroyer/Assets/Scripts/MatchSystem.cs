@@ -13,11 +13,6 @@ public class MatchSystem : MonoBehaviour
     }
     public Chip[] GetGroup(Cell originCell)
     {
-        if (originCell?.Chip == null)
-        {
-            return null;
-        }
-
         Queue<Cell> cellsToProcess = new Queue<Cell>();
         HashSet<Cell> processedCells = new HashSet<Cell>();
         List<Chip> matchedChips = new List<Chip>();
@@ -41,7 +36,7 @@ public class MatchSystem : MonoBehaviour
     private void TryEnqueueNeighbour(Cell cell, Vector2Int neighbourOffset, ref Queue<Cell> cellsToProcess, ref HashSet<Cell> processedCells)
     {
         Cell neighbour = GridSystem.Instance.GetCell(cell.PosToGrid + neighbourOffset);
-        if (!processedCells.Contains(neighbour) && neighbour?.Chip != null && cell.Chip.ColorId == neighbour.Chip.ColorId)
+        if (!processedCells.Contains(neighbour) && neighbour?.Chip != null  && cell.Chip.ColorId == neighbour.Chip.ColorId)
         {
             processedCells.Add(neighbour);
             cellsToProcess.Enqueue(neighbour);
@@ -49,6 +44,8 @@ public class MatchSystem : MonoBehaviour
     }
     public void TryConsumeMatch(Cell originCell, float damage)
     {
+        if (originCell?.Chip == null) return;
+
         originCell.Chip.Health -= damage;
         if (originCell.Chip.Health <= 0)
         {
@@ -65,6 +62,8 @@ public class MatchSystem : MonoBehaviour
     }
     public void TryConsumeMatch(Cell originCell)
     {
+        if (originCell?.Chip == null) return;
+
         Chip[] chips = GetGroup(originCell);
         if (chips.Length>=_minAmountForDestruction)
         {

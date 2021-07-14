@@ -11,7 +11,7 @@ public class Chip : MonoBehaviour
     private MoveChip _moveChip;
     [SerializeField]
     private Animator _animator;
-    private Chip[] _chopsGroup;
+    private Chip[] _chipsGroup;
 
     [SerializeField]
     private float _hangTimer;
@@ -37,7 +37,7 @@ public class Chip : MonoBehaviour
 
     void Start()
     {
-        _chopsGroup = MatchSystem.Instance.GetGroup(Cell);
+        _chipsGroup = MatchSystem.Instance.GetGroup(Cell);
         CommitFloor();
         _hangTime = _hangTimer;
         _moveChip.FinishedTheWay += СheckingСhanges;
@@ -77,19 +77,23 @@ public class Chip : MonoBehaviour
     }
     public void Consume()
     {
-        if (_destroyParticle!=null)
+        if (_destroyParticle != null)
         {
-            ParticleSystem particle = Instantiate(_destroyParticle, transform.position, transform.rotation);
+            ParticleSystem particle = Instantiate(_destroyParticle, Cell.transform.position, Cell.transform.rotation);
             particle.Play();
         }
+
         Cell.Chip = null;
+        enabled = false;
         Destroy(gameObject);
     }
     private void CommitFloor()
     {
         Cell cellDown = GridSystem.Instance.GetCell(Cell.PosToGrid + Vector2Int.down);
         if (cellDown == null || (cellDown.Chip != null && cellDown.Chip.IsSteadiness))
+        {
             IsSteadiness = true;
+        }
         else
             IsSteadiness = false;
 
@@ -106,16 +110,21 @@ public class Chip : MonoBehaviour
     }
     private bool CommitCheckGroup()
     {
-        foreach (var item in _chopsGroup)
+        if (_chipsGroup == null) return false;
+
+        foreach (var item in _chipsGroup)
         {
             if (item.IsSteadiness) return true;
         }
+
         return false;
     }
     private void Atack()
     {
-        if(CommitCheck())
-        MatchSystem.Instance.TryConsumeMatch(Cell);
+        if (CommitCheck())
+        {
+            MatchSystem.Instance.TryConsumeMatch(Cell);
+        }
     }
     public void InPlace()
     {
@@ -123,11 +132,16 @@ public class Chip : MonoBehaviour
 
         _hangTime = _hangTimer;
     }
-    
+
     public void СheckingСhanges()
     {
         CommitFloor();
-        _chopsGroup = MatchSystem.Instance.GetGroup(Cell);
+        Chip[] grop = MatchSystem.Instance.GetGroup(Cell);
+        //if (grop.Length>_chipsGroup.Length)
+        //{
+        //    _hangTime = _hangTimer;
+        //}
+        _chipsGroup = grop;
     }
 
 }
