@@ -2215,7 +2215,7 @@ PrefabInstance:
     - target: {fileID: 9024456558217270553, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
       propertyPath: _chipsPrefans.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9024456558217270553, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
