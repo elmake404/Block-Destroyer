@@ -15,22 +15,22 @@ public class PlayerAtack : MonoBehaviour
     void Start()
     {
         _playerMove = GetComponent<PlayerMove>();
-        StartCoroutine(Shooting());
+        //StartCoroutine(Shooting());
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        Atack(_playerMove.DirectionTravel);
-    //    }
-    //}
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Atack(_playerMove.DirectionTravel);
+        }
+    }
     private void Atack(Vector3 direction)
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, direction, out hit,1f,_layerMask))
         {
-           _matchSystem.TryConsumeMatch( hit.collider.GetComponent<Chip>().Cell,_attackDamage);
+           _matchSystem.StartTryConsumeMatch( hit.collider.GetComponent<Chip>().Cell,_attackDamage);
         }
     }
     private IEnumerator Shooting()

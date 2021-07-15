@@ -12,7 +12,7 @@ public class View : MonoBehaviour
     private bool _isActive;
     void Start()
     {
-        _isActive = false;
+        //_isActive = false;
     }
     [ContextMenu("StateSwitch")]
     private void StateSwitch() => _isActive = !_isActive;

@@ -18,6 +18,8 @@ public class Chip : MonoBehaviour
     private float _hangTime;
     [SerializeField]
     private int _colorId;
+    [SerializeField]
+    private bool _isConsume;
 
     public float Health;
     public int ColorId => _colorId;
@@ -75,8 +77,18 @@ public class Chip : MonoBehaviour
             }
         }
     }
-    public void Consume()
+    public void StartConsume(float delay)
     {
+        if (!_isConsume)
+        {
+            enabled = false;
+            StartCoroutine(Consume(delay));
+        }
+    }
+    private IEnumerator Consume(float delay)
+    {
+        _isConsume = true;
+        yield return new WaitForSeconds(delay);
         if (_destroyParticle != null)
         {
             ParticleSystem particle = Instantiate(_destroyParticle, Cell.transform.position, Cell.transform.rotation);
@@ -84,8 +96,8 @@ public class Chip : MonoBehaviour
         }
 
         Cell.Chip = null;
-        enabled = false;
         Destroy(gameObject);
+
     }
     private void CommitFloor()
     {
@@ -123,7 +135,7 @@ public class Chip : MonoBehaviour
     {
         if (CommitCheck())
         {
-            MatchSystem.Instance.TryConsumeMatch(Cell);
+            MatchSystem.Instance.StartTryConsumeMatch(Cell);
         }
     }
     public void InPlace()
