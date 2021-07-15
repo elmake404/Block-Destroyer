@@ -8,7 +8,7 @@ public class MatchSystem : MonoBehaviour
     [SerializeField]
     private int _minAmountForDestruction;
     [SerializeField]
-    private float _delayBeforeDestruction;
+    private float _delayBeforeDestruction, _delayBeforeDestructionPlayer;
     private void Awake()
     {
         Instance = this;
@@ -53,9 +53,9 @@ public class MatchSystem : MonoBehaviour
 
             foreach (Chip chip in chips)
             {
-                chip.StartConsume(_delayBeforeDestruction);
+                chip.StartConsume(_delayBeforeDestructionPlayer);
             }
-            yield return new WaitForSeconds(_delayBeforeDestruction);
+            yield return new WaitForSeconds(_delayBeforeDestructionPlayer);
             GridSystem.Instance.UpdateStateCell();
         }
 

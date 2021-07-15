@@ -30503,6 +30503,11 @@ PrefabInstance:
       propertyPath: _delayBeforeDestruction
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 9024456559552584823, guid: 66d86a35386842644bbe3b2705964d06,
+        type: 3}
+      propertyPath: _delayBeforeDestructionPlayer
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 9024456559640996046, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
       propertyPath: _grid.Array.size
