@@ -87,6 +87,9 @@ public class Chip : MonoBehaviour
     }
     private IEnumerator Consume(float delay)
     {
+        _animator.SetBool("Rattling", false);
+        _animator.SetBool("Blink", true);
+
         _isConsume = true;
         yield return new WaitForSeconds(delay);
         if (_destroyParticle != null)
