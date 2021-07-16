@@ -15,7 +15,7 @@ public class PlayerAtack : MonoBehaviour
     void Start()
     {
         _playerMove = GetComponent<PlayerMove>();
-        StartCoroutine(Shooting());
+        //StartCoroutine(Shooting());
     }
 
     //private void FixedUpdate()

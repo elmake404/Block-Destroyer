@@ -6,6 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     public static Transform Position { get; private set; }
 
+    [SerializeField]
+    private ModelPlayer _modelPlayer;
     private Vector3 _startTouchPos, _currentPosPlayer, _targetPosPlayer;
     private Vector3 _directionTravel; public Vector3 DirectionTravel
     {
@@ -24,6 +26,7 @@ public class PlayerMove : MonoBehaviour
             {
                 _directionTravel = Vector3.down;
             }
+
         }
     }
     private Vector3 _startPos;
@@ -121,10 +124,26 @@ public class PlayerMove : MonoBehaviour
 
         Vector3 direction = (target - transform.position).normalized * _speed;
         direction.y = _rbMain.velocity.y;
-       /// надо поработаьть с колецией 
-        _rbMain.velocity =_legs.CheckDirection( direction);
+        /// надо поработаьть с колецией 
+        _rbMain.velocity = _legs.CheckDirection(direction);
 
         DirectionTravel = direction;
+        //if (Mathf.Abs(_targetPosPlayer.x - transform.position.x) > 0.05f)
+            RotationModel(DirectionTravel.x);
+        //else
+        //    RotationModel(0);
+    }
+    private void RotationModel(float x)
+    {
+        if (x != 0)
+        {
+            int side = x > 0 ? 1 : -1;
+            _modelPlayer.TurnSideways(side);
+        }
+        else
+        {
+            _modelPlayer.StandStraight();
+        }
     }
     private void OnDrawGizmosSelected()
     {
