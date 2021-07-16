@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Yura Scene.unity
+    guid: 7638e28f1f1bb544aad3f059b4536dbf
   m_configObjects: {}
