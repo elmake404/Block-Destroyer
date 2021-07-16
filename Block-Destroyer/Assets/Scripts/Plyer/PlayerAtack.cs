@@ -12,10 +12,10 @@ public class PlayerAtack : MonoBehaviour
 
     [SerializeField]
     private float _timeBeforeAttack,_attackDamage;
-    void Start()
+    private void Awake()
     {
         _playerMove = GetComponent<PlayerMove>();
-        //StartCoroutine(Shooting());
+        GameStageEvent.StartLevel += StartAtack;
     }
 
     //private void FixedUpdate()
@@ -25,6 +25,12 @@ public class PlayerAtack : MonoBehaviour
     //        Atack(_playerMove.DirectionTravel);
     //    }
     //}
+    private void StartAtack()
+    {
+        GameStageEvent.StartLevel -= StartAtack;
+
+        StartCoroutine(Shooting());
+    }
     private void Atack(Vector3 direction)
     {
         RaycastHit hit;
@@ -37,8 +43,8 @@ public class PlayerAtack : MonoBehaviour
     {
         while (true)
         {
-            Atack(_playerMove.DirectionTravel);
             yield return new WaitForSeconds(_timeBeforeAttack);
+            Atack(_playerMove.DirectionTravel);
         }
     }
 }

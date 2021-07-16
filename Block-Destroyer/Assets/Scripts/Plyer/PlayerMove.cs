@@ -58,42 +58,42 @@ public class PlayerMove : MonoBehaviour
     }
     private void Update()
     {
-        //if (GameStage.IsGameFlowe)
-        //{
-        if (TouchUtility.TouchCount > 0)
+        if (GameStage.IsGameFlowe)
         {
-            Touch touch = TouchUtility.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
+            if (TouchUtility.TouchCount > 0)
             {
-                Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+                Touch touch = TouchUtility.GetTouch(0);
 
-                _currentPosPlayer = transform.position;
-
-                _startTouchPos = (_cam.transform.position - ((ray.direction) *
-                        ((_cam.transform.position - transform.position).z / ray.direction.z)));
-            }
-            else if (touch.phase == TouchPhase.Moved)
-            {
-                Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
-
-                if (_startTouchPos == Vector3.zero)
+                if (touch.phase == TouchPhase.Began)
                 {
+                    Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+
                     _currentPosPlayer = transform.position;
 
                     _startTouchPos = (_cam.transform.position - ((ray.direction) *
                             ((_cam.transform.position - transform.position).z / ray.direction.z)));
                 }
+                else if (touch.phase == TouchPhase.Moved)
+                {
+                    Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
 
-                _targetPosPlayer = _currentPosPlayer + ((_cam.transform.position - ((ray.direction) *
-                        ((_cam.transform.position - transform.position).z / ray.direction.z))) - _startTouchPos);
+                    if (_startTouchPos == Vector3.zero)
+                    {
+                        _currentPosPlayer = transform.position;
+
+                        _startTouchPos = (_cam.transform.position - ((ray.direction) *
+                                ((_cam.transform.position - transform.position).z / ray.direction.z)));
+                    }
+
+                    _targetPosPlayer = _currentPosPlayer + ((_cam.transform.position - ((ray.direction) *
+                            ((_cam.transform.position - transform.position).z / ray.direction.z))) - _startTouchPos);
+                }
+            }
+            else
+            {
+                _targetPosPlayer = transform.position;
             }
         }
-        else
-        {
-            _targetPosPlayer = transform.position;
-        }
-        //}
     }
     void FixedUpdate()
     {
@@ -128,10 +128,10 @@ public class PlayerMove : MonoBehaviour
         _rbMain.velocity = _legs.CheckDirection(direction);
 
         DirectionTravel = direction;
-        //if (Mathf.Abs(_targetPosPlayer.x - transform.position.x) > 0.05f)
+        if (Mathf.Abs(_targetPosPlayer.x - transform.position.x) > 0.05f)
             RotationModel(DirectionTravel.x);
-        //else
-        //    RotationModel(0);
+        else
+            RotationModel(0);
     }
     private void RotationModel(float x)
     {

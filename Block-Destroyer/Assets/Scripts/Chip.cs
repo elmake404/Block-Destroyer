@@ -76,6 +76,10 @@ public class Chip : MonoBehaviour
                 _hangTime -= Time.deltaTime;
             }
         }
+        else
+        {
+            _animator.SetBool("Rattling", false);
+        }
     }
     public void StartConsume(float delay)
     {
@@ -141,13 +145,6 @@ public class Chip : MonoBehaviour
             MatchSystem.Instance.StartTryConsumeMatch(Cell);
         }
     }
-    public void InPlace()
-    {
-        _animator.SetBool("Rattling", false);
-
-        _hangTime = _hangTimer;
-    }
-
     public void СheckingСhanges()
     {
         CommitFloor();
