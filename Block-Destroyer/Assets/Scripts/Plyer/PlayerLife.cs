@@ -7,7 +7,7 @@ public class PlayerLife : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Chip chip = other.GetComponent<Chip>(); 
-        if (chip!=null)
+        if (chip!=null||other.gameObject.layer==10)
         {
             Destroy(transform.parent.gameObject);
         }
