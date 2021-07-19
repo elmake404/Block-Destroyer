@@ -1833,8 +1833,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &214731870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6738,7 +6736,7 @@ PrefabInstance:
     - target: {fileID: 7801645073002303859, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9024456558217270554, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
@@ -6759,11 +6757,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024456559351270940, guid: 66d86a35386842644bbe3b2705964d06,
-        type: 3}
-      propertyPath: _speed
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9024456559552584808, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
@@ -9434,7 +9427,7 @@ PrefabInstance:
     - target: {fileID: 9102612601388745838, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.72
+      value: -10.629
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66d86a35386842644bbe3b2705964d06, type: 3}
@@ -9715,8 +9708,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &763842749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10013,8 +10004,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &784921712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11296,8 +11285,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &904311578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12528,8 +12515,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1084261278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13385,8 +13370,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1206184537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15689,8 +15672,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1441537997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18264,8 +18245,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1654095938
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19141,8 +19120,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1743618143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19516,8 +19493,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1774140014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19868,8 +19843,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1796527806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20070,8 +20043,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1801875794
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20439,8 +20410,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1817554484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21669,8 +21638,6 @@ MonoBehaviour:
   _colorId: 4
   _isConsume: 0
   Health: Infinity
-  IsSteadiness: 0
-  Is: 0
 --- !u!65 &1906894550
 BoxCollider:
   m_ObjectHideFlags: 0
