@@ -15,4 +15,12 @@ public class Lava : MonoBehaviour
     {
         transform.Translate(Vector3.down * _speed);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        Chip chip = other.GetComponent<Chip>();
+        if (chip != null && chip.enabled)
+        {
+            chip.StartConsume(0);
+        }
+    }
 }
