@@ -1834,6 +1834,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &214731870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6734,6 +6735,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7801645073002303859, guid: 66d86a35386842644bbe3b2705964d06,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9024456558217270554, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
       propertyPath: m_RootOrder
@@ -6743,6 +6749,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024456559351270939, guid: 66d86a35386842644bbe3b2705964d06,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 44.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024456559351270939, guid: 66d86a35386842644bbe3b2705964d06,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024456559351270940, guid: 66d86a35386842644bbe3b2705964d06,
+        type: 3}
+      propertyPath: _speed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9024456559552584808, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
@@ -9695,6 +9716,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &763842749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9992,6 +10014,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &784921712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11274,6 +11297,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &904311578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11803,7 +11827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 48.78, z: -10}
+  m_LocalPosition: {x: 2, y: 51.97, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12505,6 +12529,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1084261278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13361,6 +13386,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1206184537
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15664,6 +15690,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1441537997
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18238,6 +18265,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1654095938
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19114,6 +19142,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1743618143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19488,6 +19517,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1774140014
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19839,6 +19869,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1796527806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20040,6 +20071,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1801875794
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20408,6 +20440,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1817554484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21637,6 +21670,7 @@ MonoBehaviour:
   _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
+  Is: 0
 --- !u!65 &1906894550
 BoxCollider:
   m_ObjectHideFlags: 0

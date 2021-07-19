@@ -23,7 +23,7 @@ public class Chip : MonoBehaviour
 
     public float Health;
     public int ColorId => _colorId;
-    public bool IsSteadiness /*{ get; private set; }*/;
+    public bool IsSteadiness { get; private set; }
 
     public Cell Cell
     {
@@ -40,7 +40,7 @@ public class Chip : MonoBehaviour
     void Start()
     {
         _chipsGroup = MatchSystem.Instance.GetGroup(Cell);
-        CommitFloor();
+        IsSteadiness = true;
         _hangTime = _hangTimer;
         _moveChip.FinishedTheWay += СheckingСhanges;
         _moveChip.FinishedTheWay += Atack;
@@ -114,7 +114,9 @@ public class Chip : MonoBehaviour
             IsSteadiness = true;
         }
         else
+        {
             IsSteadiness = false;
+        }
 
     }
     private bool CommitCheck()

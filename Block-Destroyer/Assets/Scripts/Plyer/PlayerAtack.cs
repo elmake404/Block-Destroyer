@@ -11,7 +11,7 @@ public class PlayerAtack : MonoBehaviour
     private PlayerMove _playerMove;
 
     [SerializeField]
-    private float _radiusAtack, _timeBeforeAttack,_attackDamage;
+    private float _radiusAtack, _timeBeforeAttack,_attackDamage,_attackDistence=0.8f;
     private void Awake()
     {
         _playerMove = GetComponent<PlayerMove>();
@@ -34,7 +34,7 @@ public class PlayerAtack : MonoBehaviour
     private void Atack(Vector3 direction)
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position,_radiusAtack, direction, out hit,1f,_layerMask))
+        if (Physics.SphereCast(transform.position,_radiusAtack, direction, out hit, _attackDistence - _radiusAtack,_layerMask))
         {
            _matchSystem.StartTryConsumeMatch( hit.collider.GetComponent<Chip>().Cell,_attackDamage);
         }
