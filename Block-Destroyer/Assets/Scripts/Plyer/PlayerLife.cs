@@ -11,5 +11,9 @@ public class PlayerLife : MonoBehaviour
         {
             Destroy(transform.parent.gameObject);
         }
+        if (other.tag =="Finish")
+        {
+            GameStage.Instance.ChangeStage(Stage.WinGame);
+        }
     }
 }

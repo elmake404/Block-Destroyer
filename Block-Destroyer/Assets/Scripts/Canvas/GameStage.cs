@@ -6,7 +6,7 @@ public static class GameStageEvent
 {
     public delegate void Empty();
     public static event Empty StartLevel;
-    public static event Empty WinLevel;
+    public static event Empty FailLevel;
     public static void InvokeStartLevel()
     {
         StartLevel?.Invoke();
@@ -53,8 +53,9 @@ public class GameStage : MonoBehaviour
             case Stage.StartLevel:
 
                 _canvasManager.GameStageWindow(StageGame);
-                GameStageEvent.InvokeStartLevel();
                 IsGameFlowe = true;
+                GameStageEvent.InvokeStartLevel();
+
                 break;
 
             case Stage.WinGame:

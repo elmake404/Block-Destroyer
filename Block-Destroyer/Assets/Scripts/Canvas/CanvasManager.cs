@@ -9,20 +9,39 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]
     private GameObject _menuUI, _inGameUI, _wimIU, _lostUI;
     [SerializeField]
-    private Image  _levelBar;
-    private Transform _finishPos;
+    private Image _levelBar;
+    private Transform _finishPos, _playerTransform;
     [SerializeField]
     private Text _textLevelWin, _textLevelCurent, _textLevelTarget;
+    private float _distens;
+    private float _distensTraveled
+    { get { return _finishPos.position.y - _playerTransform.position.y; } }
 
     private void Start()
     {
-        _textLevelWin.text ="Level "+ PlayerPrefs.GetInt("Level").ToString();
+        _finishPos = GridSystem.Instance.transform;
+        _playerTransform = PlayerMove.Transform;
+
+        _distens = _finishPos.position.y - _playerTransform.position.y - 1f;
+
+        _textLevelWin.text = "Level " + PlayerPrefs.GetInt("Level").ToString();
         _textLevelCurent.text = PlayerPrefs.GetInt("Level").ToString();
-        _textLevelTarget.text = (PlayerPrefs.GetInt("Level") +1).ToString();
+        _textLevelTarget.text = (PlayerPrefs.GetInt("Level") + 1).ToString();
     }
     private void FixedUpdate()
     {
+        if (GameStage.IsGameFlowe)
+            AmoutDistensTraveled();
     }
+    private void AmoutDistensTraveled()
+    {
+        if (_playerTransform != null)
+        {
+            float amoutDistens = 1 - _distensTraveled / _distens;
+            _levelBar.fillAmount = Mathf.Lerp(_levelBar.fillAmount, amoutDistens, 0.7f);
+        }
+    }
+
     public void GameStageWindow(Stage stageGame)
     {
         switch (stageGame)

@@ -13,7 +13,8 @@ public class Lava : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Translate(Vector3.down * _speed);
+        if (GameStage.IsGameFlowe)
+            transform.Translate(Vector3.down * _speed);
     }
     private void OnTriggerEnter(Collider other)
     {

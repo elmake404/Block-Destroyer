@@ -41,7 +41,7 @@ public class PlayerAtack : MonoBehaviour
     }
     private IEnumerator Shooting()
     {
-        while (true)
+        while (GameStage.IsGameFlowe)
         {
             yield return new WaitForSeconds(_timeBeforeAttack);
             Atack(_playerMove.DirectionTravel);

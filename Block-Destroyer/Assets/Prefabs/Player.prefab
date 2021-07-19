@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _drill: {fileID: 5988070117207514868}
+  _animator: {fileID: 1333477949203082037}
   _speedRotationModel: 0.5
   _speedRotationDrill: 0.7
 --- !u!1001 &4355453057061186202
@@ -431,6 +432,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Burrow@Idle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1545d0735f164884894e277e1559ec25,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1545d0735f164884894e277e1559ec25, type: 3}
@@ -545,7 +551,7 @@ PrefabInstance:
     - target: {fileID: 2732684518155842968, guid: c73ae6621f8832748a78dfb8aec6dd12,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3361834574544056098, guid: c73ae6621f8832748a78dfb8aec6dd12,
         type: 3}
@@ -621,7 +627,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: 986587b7e9a46b24fa35e6fff3da8990, type: 2}
     - target: {fileID: 8667052616836904280, guid: c73ae6621f8832748a78dfb8aec6dd12,
         type: 3}
       propertyPath: m_Enabled
@@ -638,6 +644,12 @@ GameObject:
 --- !u!4 &4927320578155426127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3361834574544056098, guid: c73ae6621f8832748a78dfb8aec6dd12,
+    type: 3}
+  m_PrefabInstance: {fileID: 7694111128594292333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1333477949203082037 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8667052616836904280, guid: c73ae6621f8832748a78dfb8aec6dd12,
     type: 3}
   m_PrefabInstance: {fileID: 7694111128594292333}
   m_PrefabAsset: {fileID: 0}

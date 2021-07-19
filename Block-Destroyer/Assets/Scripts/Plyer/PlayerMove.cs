@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public static Transform Position { get; private set; }
+    public static Transform Transform { get; private set; }
 
     [SerializeField]
     private ModelPlayer _modelPlayer;
@@ -48,7 +48,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         _startPos = transform.position;
-        Position = transform;
+        Transform = transform;
     }
 
     void Start()
