@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa1302d3c00d3e4784ce8c047c5a78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 1219598895894153503}
 --- !u!54 &7479102576846950050
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -223,6 +224,7 @@ MonoBehaviour:
   _radiusAtack: 0.25
   _timeBeforeAttack: 0.4
   _attackDamage: 1.5
+  _attackDistence: 0.8
 --- !u!114 &4215483794039922066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +404,12 @@ PrefabInstance:
 --- !u!4 &4322070291191172465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1731519725656919046, guid: 6082d81b847375c4c8de3ee3b918ef79,
+    type: 3}
+  m_PrefabInstance: {fileID: 2593101433895436663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1219598895894153503 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3679562632246724712, guid: 6082d81b847375c4c8de3ee3b918ef79,
     type: 3}
   m_PrefabInstance: {fileID: 2593101433895436663}
   m_PrefabAsset: {fileID: 0}
