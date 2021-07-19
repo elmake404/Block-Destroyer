@@ -59,10 +59,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e851cd6a9ce2c94a8c24a9da0fb783d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _destroyParticle: {fileID: 1123316946448875767, guid: e7d60205ce45db6488aa43be17c5be73,
+    type: 3}
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
   _hangTimer: 1
   _colorId: 4
+  _isConsume: 0
   Health: Infinity
   IsSteadiness: 0
 --- !u!114 &8312632992155133304
