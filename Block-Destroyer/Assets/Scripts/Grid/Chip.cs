@@ -18,8 +18,8 @@ public class Chip : MonoBehaviour
     private float _hangTime;
     [SerializeField]
     private int _colorId;
-    [SerializeField]
-    private bool _isConsume;
+    //[SerializeField]
+    protected bool _isConsume;
 
     public float Health;
     public int ColorId => _colorId;

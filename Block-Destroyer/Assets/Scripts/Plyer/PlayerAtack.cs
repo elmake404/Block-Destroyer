@@ -12,6 +12,24 @@ public class PlayerAtack : MonoBehaviour
 
     [SerializeField]
     private float _radiusAtack, _timeBeforeAttack,_attackDamage,_attackDistence=0.8f;
+    private float _timeBeforeAttackBoost,_attackDamageBoost;
+    [SerializeField]
+    private bool _isBoost;
+    private IEnumerator _boostingCorotine;
+    public float TimeBeforeAttack 
+    {
+        get
+        {
+            return _isBoost ? _timeBeforeAttackBoost : _timeBeforeAttack;
+        }
+    }
+    public float AttackDamage
+    {
+        get
+        {
+            return _isBoost ? _attackDamageBoost : _attackDamage;
+        }
+    }
     private void Awake()
     {
         _playerMove = GetComponent<PlayerMove>();
@@ -36,15 +54,32 @@ public class PlayerAtack : MonoBehaviour
         RaycastHit hit;
         if (Physics.SphereCast(transform.position,_radiusAtack, direction, out hit, _attackDistence - _radiusAtack,_layerMask))
         {
-           _matchSystem.StartTryConsumeMatch( hit.collider.GetComponent<Chip>().Cell,_attackDamage);
+           _matchSystem.StartTryConsumeMatch( hit.collider.GetComponent<Chip>().Cell, AttackDamage);
         }
     }
     private IEnumerator Shooting()
     {
         while (GameStage.IsGameFlowe)
         {
-            yield return new WaitForSeconds(_timeBeforeAttack);
+            yield return new WaitForSeconds(TimeBeforeAttack);
             Atack(_playerMove.DirectionTravel);
         }
+    }
+    private IEnumerator Boosting(float time)
+    {
+        _isBoost = true;
+        yield return new WaitForSeconds(time);
+        _isBoost = false;
+    }
+    public void Gain(float timeBoost, float increasedAttackPower, float increasedAttackSpeedt)
+    {        
+        if(_boostingCorotine!=null)
+        {
+            StopCoroutine(_boostingCorotine);
+        }
+        _boostingCorotine = Boosting(timeBoost);
+        StartCoroutine(_boostingCorotine);
+        _attackDamageBoost = increasedAttackPower;
+        _timeBeforeAttackBoost = increasedAttackSpeedt;
     }
 }

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 369879317441190002}
   - component: {fileID: 1142638544045462956}
   - component: {fileID: 8312632992155133304}
-  - component: {fileID: 4212933815650441291}
+  - component: {fileID: -5613099965390579775}
   m_Layer: 8
-  m_Name: BlockBomb
+  m_Name: BlockIncreasedAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0.1
---- !u!114 &4212933815650441291
+--- !u!114 &-5613099965390579775
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,17 +69,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 9206929665862640989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0253d386f2b2f024fa08390383a624bd, type: 3}
+  m_Script: {fileID: 11500000, guid: bd41eed070eda294ca311ce5eba7af3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyParticle: {fileID: 8375858228520792280, guid: 7a00584066291ac47be5c2ece6d0aeea,
-    type: 3}
+  _destroyParticle: {fileID: 0}
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
   _hangTimer: 1
-  _colorId: 5
+  _colorId: 6
   Health: 1
-  _explosionRadiusInCells: 2
+  _timeBoost: 5
+  _increasedAttackPower: Infinity
+  _increasedAttackSpeed: 0.1
 --- !u!1001 &1724185378205635879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96,7 +97,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b00b63687739df6458fb7e09dd85f13f, type: 2}
+      objectReference: {fileID: 2100000, guid: 2296a88e9155dbe46b80609549cd833f, type: 2}
     - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_LocalPosition.x
