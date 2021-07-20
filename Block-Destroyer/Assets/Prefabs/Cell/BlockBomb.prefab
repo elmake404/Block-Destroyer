@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5187533013621474562}
   - component: {fileID: 8312632992155133304}
   m_Layer: 8
-  m_Name: Block 3
+  m_Name: BlockBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,14 +59,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e851cd6a9ce2c94a8c24a9da0fb783d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyParticle: {fileID: 1123316946448875767, guid: e7d60205ce45db6488aa43be17c5be73,
+  _destroyParticle: {fileID: 8375858228520792280, guid: 7a00584066291ac47be5c2ece6d0aeea,
     type: 3}
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
   _hangTimer: 1
-  _colorId: 4
+  _colorId: 1
   _isConsume: 0
-  Health: Infinity
+  Health: 1
 --- !u!114 &8312632992155133304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,7 +96,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b0d2c610ffb91e841a979777fd3839cf, type: 2}
+      objectReference: {fileID: 2100000, guid: b00b63687739df6458fb7e09dd85f13f, type: 2}
     - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_LocalPosition.x

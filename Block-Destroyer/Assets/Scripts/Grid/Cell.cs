@@ -9,7 +9,7 @@ public class Cell : MonoBehaviour
     public Vector2Int PosToGrid { get; private set; }
     [SerializeField]
     private Chip _chipManualSpawn;
-    //[HideInInspector]
+    [HideInInspector]
     [SerializeField]
     private Chip _chip;
     public Chip Chip

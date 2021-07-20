@@ -46,6 +46,8 @@ public class MatchSystem : MonoBehaviour
     private IEnumerator TryConsumeMatch(Cell originCell, float damage)
     {
         originCell.Chip.Health -= damage;
+        if (float.IsNaN(originCell.Chip.Health)) originCell.Chip.Health = 0;
+
         if (originCell.Chip.Health <= 0)
         {
 

@@ -81,7 +81,7 @@ public class Chip : MonoBehaviour
             _animator.SetBool("Rattling", false);
         }
     }
-    public void StartConsume(float delay)
+    public virtual void StartConsume(float delay)
     {
         if (!_isConsume)
         {
@@ -89,7 +89,7 @@ public class Chip : MonoBehaviour
             StartCoroutine(Consume(delay));
         }
     }
-    private IEnumerator Consume(float delay)
+    protected IEnumerator Consume(float delay)
     {
         _animator.SetBool("Rattling", false);
         _animator.SetBool("Blink", true);
@@ -104,7 +104,6 @@ public class Chip : MonoBehaviour
 
         Cell.Chip = null;
         Destroy(gameObject);
-
     }
     private void CommitFloor()
     {
