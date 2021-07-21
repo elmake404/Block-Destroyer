@@ -79,7 +79,7 @@ MonoBehaviour:
   _hangTimer: 0
   _colorId: 5
   Health: 1
-  _explosionRadiusInCells: 2
+  _explosionRadiusInCells: 1
 --- !u!1001 &1724185378205635879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b00b63687739df6458fb7e09dd85f13f, type: 2}
+      objectReference: {fileID: 2100000, guid: c8b8eb945d1c37140a1e009daaa17296, type: 2}
     - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_LocalPosition.x

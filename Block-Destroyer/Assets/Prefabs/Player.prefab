@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a484e970e5b1a1848b6aefba5a185dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particleAttack: {fileID: 1374828708934621656, guid: b6b4b1928ef1cc54c997e5b85ff73b30,
+    type: 3}
   _matchSystem: {fileID: 0}
   _layerMask:
     serializedVersion: 2
