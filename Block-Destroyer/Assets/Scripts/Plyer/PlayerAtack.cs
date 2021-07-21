@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerAtack : MonoBehaviour
 {
     [SerializeField]
+    private ParticleSystem _particleAttack;
+    [SerializeField]
     private MatchSystem _matchSystem;
     [SerializeField]
     private LayerMask _layerMask;
@@ -51,6 +53,8 @@ public class PlayerAtack : MonoBehaviour
     }
     private void Atack(Vector3 direction)
     {
+        if(_particleAttack!=null)
+        _particleAttack.Play();
         RaycastHit hit;
         if (Physics.SphereCast(transform.position,_radiusAtack, direction, out hit, _attackDistence - _radiusAtack,_layerMask))
         {
