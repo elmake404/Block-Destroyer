@@ -20699,7 +20699,7 @@ MonoBehaviour:
   _destroyParticle: {fileID: 8375858228520792280, guid: 7a00584066291ac47be5c2ece6d0aeea,
     type: 3}
   _moveChip: {fileID: 1471458227}
-  _animator: {fileID: 0}
+  _animator: {fileID: 910390189}
   _hangTimer: 0
   _colorId: 5
   Health: 1
