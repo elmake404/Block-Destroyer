@@ -225,6 +225,7 @@ MonoBehaviour:
   _timeBeforeAttack: 0.4
   _attackDamage: 1.5
   _attackDistence: 0.8
+  _isBoost: 0
 --- !u!114 &4215483794039922066
 MonoBehaviour:
   m_ObjectHideFlags: 0

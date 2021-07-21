@@ -5,22 +5,24 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
-
     [SerializeField]
     private GameObject _menuUI, _inGameUI, _wimIU, _lostUI;
     [SerializeField]
     private Image _levelBar;
     private Transform _finishPos, _playerTransform;
     [SerializeField]
-    private Text _textLevelWin, _textLevelCurent, _textLevelTarget;
+    private Text _textLevelWin, _textLevelCurent, _textLevelTarget,_crystalCounter;
     private float _distens;
     private float _distensTraveled
     { get { return _finishPos.position.y - _playerTransform.position.y; } }
 
     private void Start()
     {
+        _crystalCounter.text = PlayerPrefs.GetInt("Crystal").ToString();
+
         _finishPos = GridSystem.Instance.transform;
         _playerTransform = PlayerMove.Transform;
+
 
         _distens = _finishPos.position.y - _playerTransform.position.y - 1f;
 
@@ -41,7 +43,6 @@ public class CanvasManager : MonoBehaviour
             _levelBar.fillAmount = Mathf.Lerp(_levelBar.fillAmount, amoutDistens, 0.7f);
         }
     }
-
     public void GameStageWindow(Stage stageGame)
     {
         switch (stageGame)
@@ -70,6 +71,11 @@ public class CanvasManager : MonoBehaviour
                 _lostUI.SetActive(true);
                 break;
         }
+    }
+    public void CrystalCollector(int namber)
+    {
+        PlayerPrefs.SetInt("Crystal", PlayerPrefs.GetInt("Crystal") + 1);
+        _crystalCounter.text = PlayerPrefs.GetInt("Crystal").ToString();
     }
 
 }
