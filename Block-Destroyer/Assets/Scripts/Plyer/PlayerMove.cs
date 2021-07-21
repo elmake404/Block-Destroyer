@@ -35,8 +35,6 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody _rbMain;
     [SerializeField]
     private Legs _legs;
-    //[SerializeField]
-    //private Animator _animator;
 
     [SerializeField]
     private float _speed, _Offset;

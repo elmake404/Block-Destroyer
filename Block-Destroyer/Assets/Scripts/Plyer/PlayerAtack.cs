@@ -15,7 +15,6 @@ public class PlayerAtack : MonoBehaviour
     [SerializeField]
     private float _radiusAtack, _timeBeforeAttack, _attackDamage, _attackDistence = 0.8f;
     private float _timeBeforeAttackBoost, _attackDamageBoost;
-    [SerializeField]
     private bool _isBoost;
     private IEnumerator _boostingCorotine;
     public float TimeBeforeAttack
