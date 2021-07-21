@@ -13,12 +13,12 @@ public class PlayerAtack : MonoBehaviour
     private PlayerMove _playerMove;
 
     [SerializeField]
-    private float _radiusAtack, _timeBeforeAttack,_attackDamage,_attackDistence=0.8f;
-    private float _timeBeforeAttackBoost,_attackDamageBoost;
+    private float _radiusAtack, _timeBeforeAttack, _attackDamage, _attackDistence = 0.8f;
+    private float _timeBeforeAttackBoost, _attackDamageBoost;
     [SerializeField]
     private bool _isBoost;
     private IEnumerator _boostingCorotine;
-    public float TimeBeforeAttack 
+    public float TimeBeforeAttack
     {
         get
         {
@@ -53,12 +53,12 @@ public class PlayerAtack : MonoBehaviour
     }
     private void Atack(Vector3 direction)
     {
-        if(_particleAttack!=null)
-        _particleAttack.Play();
+        if (_particleAttack != null)
+            _particleAttack.Play();
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position,_radiusAtack, direction, out hit, _attackDistence - _radiusAtack,_layerMask))
+        if (Physics.SphereCast(transform.position, _radiusAtack, direction, out hit, _attackDistence - _radiusAtack, _layerMask))
         {
-           _matchSystem.StartTryConsumeMatch( hit.collider.GetComponent<Chip>().Cell, AttackDamage);
+            _matchSystem.StartTryConsumeMatch(hit.collider.GetComponent<Chip>().Cell, AttackDamage);
         }
     }
     private IEnumerator Shooting()
@@ -76,8 +76,8 @@ public class PlayerAtack : MonoBehaviour
         _isBoost = false;
     }
     public void Gain(float timeBoost, float increasedAttackPower, float increasedAttackSpeedt)
-    {        
-        if(_boostingCorotine!=null)
+    {
+        if (_boostingCorotine != null)
         {
             StopCoroutine(_boostingCorotine);
         }
