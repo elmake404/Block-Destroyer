@@ -12,12 +12,14 @@ public class Chip : MonoBehaviour
     [SerializeField]
     private Animator _animator;
     private Chip[] _chipsGroup;
+    private IEnumerator _consumeCorotine;
 
     [SerializeField]
     private float _hangTimer;
     private float _hangTime;
     [SerializeField]
     private int _colorId;
+    private float _delayDeath;
     //[SerializeField]
     protected bool _isConsume;
 
@@ -45,7 +47,6 @@ public class Chip : MonoBehaviour
         _moveChip.FinishedTheWay += СheckingСhanges;
         _moveChip.FinishedTheWay += Atack;
     }
-
     void FixedUpdate()
     {
         if (!_moveChip.enabled && !CommitCheck())
@@ -86,7 +87,19 @@ public class Chip : MonoBehaviour
         if (!_isConsume)
         {
             enabled = false;
-            StartCoroutine(Consume(delay));
+            _delayDeath = delay;
+            _consumeCorotine = Consume(delay);
+            StartCoroutine(_consumeCorotine);
+        }
+        else
+        {
+            if (_delayDeath>delay)
+            {
+                StopCoroutine(_consumeCorotine);
+                _delayDeath = delay;
+                _consumeCorotine = Consume(delay);
+                StartCoroutine(_consumeCorotine);
+            }
         }
     }
     protected IEnumerator Consume(float delay)
@@ -116,7 +129,6 @@ public class Chip : MonoBehaviour
         {
             IsSteadiness = false;
         }
-
     }
     private bool CommitCheck()
     {
@@ -156,5 +168,4 @@ public class Chip : MonoBehaviour
         //}
         _chipsGroup = grop;
     }
-
 }

@@ -62,7 +62,7 @@ MonoBehaviour:
   _destroyParticle: {fileID: 1123316946448875767, guid: e7d60205ce45db6488aa43be17c5be73,
     type: 3}
   _moveChip: {fileID: 8312632992155133304}
-  _animator: {fileID: 0}
+  _animator: {fileID: 3655370082890353491}
   _hangTimer: 1
   _colorId: 4
   Health: Infinity
@@ -151,6 +151,12 @@ PrefabInstance:
 --- !u!4 &8227363780020221342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7332140238528815289, guid: ff14fb4d66d08274b84a002c606dc236,
+    type: 3}
+  m_PrefabInstance: {fileID: 1724185378205635879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3655370082890353491 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2690886270357053044, guid: ff14fb4d66d08274b84a002c606dc236,
     type: 3}
   m_PrefabInstance: {fileID: 1724185378205635879}
   m_PrefabAsset: {fileID: 0}
