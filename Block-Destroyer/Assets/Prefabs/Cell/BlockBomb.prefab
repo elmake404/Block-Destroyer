@@ -76,7 +76,7 @@ MonoBehaviour:
     type: 3}
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
-  _hangTimer: 1
+  _hangTimer: 0
   _colorId: 5
   Health: 1
   _explosionRadiusInCells: 2
@@ -87,6 +87,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 369879317441190002}
     m_Modifications:
+    - target: {fileID: 52204373710287258, guid: 5faf47680f9a1d846af5735d0021756e,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -849867405023671905, guid: 338f560d0a50c83498a43250a4f85e43,
+        type: 3}
     - target: {fileID: 1936050214950494563, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_Name
@@ -151,6 +157,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5faf47680f9a1d846af5735d0021756e, type: 3}
