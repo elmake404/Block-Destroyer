@@ -372,6 +372,26 @@ PrefabInstance:
       propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1123316946448875767, guid: 4aa5946fb618b6643a70d0b1e5a7ea74,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123316946448875767, guid: 4aa5946fb618b6643a70d0b1e5a7ea74,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.25895292
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123316946448875767, guid: 4aa5946fb618b6643a70d0b1e5a7ea74,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.83276474
+      objectReference: {fileID: 0}
+    - target: {fileID: 1123316946448875767, guid: 4aa5946fb618b6643a70d0b1e5a7ea74,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.99215686
+      objectReference: {fileID: 0}
     - target: {fileID: 5820177818508767829, guid: 4aa5946fb618b6643a70d0b1e5a7ea74,
         type: 3}
       propertyPath: m_Name
@@ -435,17 +455,17 @@ PrefabInstance:
     - target: {fileID: 6656422388539448912, guid: 4aa5946fb618b6643a70d0b1e5a7ea74,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6656422388539448912, guid: 4aa5946fb618b6643a70d0b1e5a7ea74,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6656422388539448912, guid: 4aa5946fb618b6643a70d0b1e5a7ea74,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8341599896019357986, guid: 4aa5946fb618b6643a70d0b1e5a7ea74, type: 3}

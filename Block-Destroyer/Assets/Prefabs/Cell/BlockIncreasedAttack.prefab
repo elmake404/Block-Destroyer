@@ -78,7 +78,7 @@ MonoBehaviour:
   _hangTimer: 1
   _colorId: 6
   Health: 1
-  _timeBoost: 5
+  _timeBoost: 3
   _increasedAttackPower: Infinity
   _increasedAttackSpeed: 0.1
 --- !u!1001 &1724185378205635879
@@ -167,17 +167,17 @@ PrefabInstance:
     - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.75
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.75
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.75
+      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5faf47680f9a1d846af5735d0021756e, type: 3}

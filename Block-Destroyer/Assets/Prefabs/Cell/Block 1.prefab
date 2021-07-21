@@ -65,7 +65,6 @@ MonoBehaviour:
   _animator: {fileID: 4916767161559731759}
   _hangTimer: 1.5
   _colorId: 3
-  _isConsume: 0
   Health: 1
 --- !u!114 &8312632992155133304
 MonoBehaviour:
@@ -92,6 +91,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ModelBlock
       objectReference: {fileID: 0}
+    - target: {fileID: 3262722955248689994, guid: 5faf47680f9a1d846af5735d0021756e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ea5bbbaeb853bc48b17da76b5e41aec, type: 2}
     - target: {fileID: 7332140238528815289, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_LocalPosition.x
