@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd41eed070eda294ca311ce5eba7af3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _destroyParticle: {fileID: 4212237911574779970, guid: f34d53a9f8cd409428b8d1e3addf4807,
+  _destroyParticle: {fileID: 4212237911574779970, guid: dc6250ea66f1f414896e20813958cd34,
     type: 3}
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
