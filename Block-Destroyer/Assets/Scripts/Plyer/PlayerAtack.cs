@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAtack : MonoBehaviour
 {
     [SerializeField]
-    private ParticleSystem _particleAttack;
+    private ParticleSystem _particleAttack,_particleBoost;
     [SerializeField]
     private MatchSystem _matchSystem;
     [SerializeField]
@@ -71,7 +71,9 @@ public class PlayerAtack : MonoBehaviour
     private IEnumerator Boosting(float time)
     {
         _isBoost = true;
+        _particleBoost.Play();
         yield return new WaitForSeconds(time);
+        _particleBoost.Stop();
         _isBoost = false;
     }
     public void Gain(float timeBoost, float increasedAttackPower, float increasedAttackSpeedt)
