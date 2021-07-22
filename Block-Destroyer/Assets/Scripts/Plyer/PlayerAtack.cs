@@ -34,16 +34,16 @@ public class PlayerAtack : MonoBehaviour
     private void Awake()
     {
         _playerMove = GetComponent<PlayerMove>();
-        GameStageEvent.StartLevel += StartAtack;
+        //GameStageEvent.StartLevel += StartAtack;
     }
 
-    //private void FixedUpdate()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Space))
-    //    {
-    //        Atack(_playerMove.DirectionTravel);
-    //    }
-    //}
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Atack(_playerMove.DirectionTravel);
+        }
+    }
     private void StartAtack()
     {
         GameStageEvent.StartLevel -= StartAtack;

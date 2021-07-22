@@ -17,7 +17,9 @@ public class PlayerLife : MonoBehaviour
         if (chip != null)
         {
             if (chip.tag == "Bonus")
-                chip.StartConsume(0);
+            {
+                MatchSystem.Instance.StartTryConsumeMatch(chip.Cell,float.PositiveInfinity);
+            }
             else
                 Death();
         }

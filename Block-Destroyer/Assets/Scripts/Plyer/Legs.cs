@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Legs : MonoBehaviour
 {
+    [SerializeField]
     private List<Transform> _walls = new List<Transform>();
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8||other.tag =="Wall")
+        if ((other.gameObject.layer == 8 && other.tag != "Bonus") || other.tag == "Wall")
         {
             _walls.Add(other.transform);
+        }
+        else
+        {
+            Debug.Log(name);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == 8 || other.tag == "Wall")
+        if ((other.gameObject.layer == 8 && other.tag != "Bonus") || other.tag == "Wall")
         {
             _walls.Remove(other.transform);
         }
