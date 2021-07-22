@@ -83,6 +83,7 @@ public class PlayerMove : MonoBehaviour
                                 ((_cam.transform.position - transform.position).z / ray.direction.z)));
                     }
 
+
                     _targetPosPlayer = _currentPosPlayer + ((_cam.transform.position - ((ray.direction) *
                             ((_cam.transform.position - transform.position).z / ray.direction.z))) - _startTouchPos);
                 }
