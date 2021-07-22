@@ -248,11 +248,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4212237911574779970, guid: f34d53a9f8cd409428b8d1e3addf4807,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4212237911574779972, guid: f34d53a9f8cd409428b8d1e3addf4807,
         type: 3}
       propertyPath: m_Name
@@ -262,6 +257,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212237912000103822, guid: f34d53a9f8cd409428b8d1e3addf4807,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4212237912000103824, guid: f34d53a9f8cd409428b8d1e3addf4807,
         type: 3}
@@ -283,6 +283,11 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4212237912060179521, guid: f34d53a9f8cd409428b8d1e3addf4807,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4212237912060179523, guid: f34d53a9f8cd409428b8d1e3addf4807,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -302,6 +307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212237912728663261, guid: f34d53a9f8cd409428b8d1e3addf4807,
+        type: 3}
+      propertyPath: simulationSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4212237912728663263, guid: f34d53a9f8cd409428b8d1e3addf4807,
         type: 3}
