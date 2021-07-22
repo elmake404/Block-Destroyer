@@ -8,14 +8,14 @@ public class Legs : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == 8||other.tag =="Wall")
         {
             _walls.Add(other.transform);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == 8 || other.tag == "Wall")
         {
             _walls.Remove(other.transform);
         }
