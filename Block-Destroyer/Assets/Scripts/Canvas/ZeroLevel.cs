@@ -7,7 +7,7 @@ public class ZeroLevel : MonoBehaviour
 {
     private void Start()
     {
-        if (PlayerPrefs.GetInt("Scenes")<=0)
+        if (PlayerPrefs.GetInt("Scenes")<=0|| PlayerPrefs.GetInt("Scenes") >= SceneManager.sceneCountInBuildSettings)
         {
             PlayerPrefs.SetInt("Scenes", 1);
         }
@@ -16,15 +16,8 @@ public class ZeroLevel : MonoBehaviour
             PlayerPrefs.SetInt("Level", 1);
         }
 
-        if (PlayerPrefs.GetInt("Scenes") < SceneManager.sceneCountInBuildSettings)
-        {
-            SceneManager.LoadScene(PlayerPrefs.GetInt("Scenes"));
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Scenes", 1);
-            SceneManager.LoadScene(PlayerPrefs.GetInt("Scenes"));
-        }
+        SceneManager.LoadScene(PlayerPrefs.GetInt("Scenes"));
+
     }
 
 }
