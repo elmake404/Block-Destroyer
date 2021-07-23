@@ -458,6 +458,11 @@ PrefabInstance:
       propertyPath: _matchSystem
       value: 
       objectReference: {fileID: 9024456559552584823}
+    - target: {fileID: 4215483794039922153, guid: b439714cdbc4d214393a444f85a0cbce,
+        type: 3}
+      propertyPath: _timeBeforeAttack
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b439714cdbc4d214393a444f85a0cbce, type: 3}
 --- !u!4 &9024456559351270939 stripped
