@@ -13,10 +13,6 @@ public class Legs : MonoBehaviour
         {
             _walls.Add(other.transform);
         }
-        else
-        {
-            Debug.Log(name);
-        }
     }
     private void OnTriggerExit(Collider other)
     {
