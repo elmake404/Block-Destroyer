@@ -21,17 +21,24 @@ public class MatchSystem : MonoBehaviour
 
         cellsToProcess.Enqueue(originCell);
         processedCells.Add(originCell);
-
-        while (cellsToProcess.Count > 0)
+        if (originCell.Chip.ColorId > 0)
         {
-            Cell cell = cellsToProcess.Dequeue();
-            matchedChips.Add(cell.Chip);
+            while (cellsToProcess.Count > 0)
+            {
+                Cell cell = cellsToProcess.Dequeue();
+                matchedChips.Add(cell.Chip);
 
-            TryEnqueueNeighbour(cell, Vector2Int.left, ref cellsToProcess, ref processedCells);
-            TryEnqueueNeighbour(cell, Vector2Int.right, ref cellsToProcess, ref processedCells);
-            TryEnqueueNeighbour(cell, Vector2Int.up, ref cellsToProcess, ref processedCells);
-            TryEnqueueNeighbour(cell, Vector2Int.down, ref cellsToProcess, ref processedCells);
+                TryEnqueueNeighbour(cell, Vector2Int.left, ref cellsToProcess, ref processedCells);
+                TryEnqueueNeighbour(cell, Vector2Int.right, ref cellsToProcess, ref processedCells);
+                TryEnqueueNeighbour(cell, Vector2Int.up, ref cellsToProcess, ref processedCells);
+                TryEnqueueNeighbour(cell, Vector2Int.down, ref cellsToProcess, ref processedCells);
+            }
         }
+        else
+        {
+            matchedChips.Add(originCell.Chip);
+        }
+
         return matchedChips.ToArray();
     }
     private void TryEnqueueNeighbour(Cell cell, Vector2Int neighbourOffset, ref Queue<Cell> cellsToProcess, ref HashSet<Cell> processedCells)
@@ -80,7 +87,7 @@ public class MatchSystem : MonoBehaviour
     public void StartTryConsumeMatch(Cell originCell, float damage)
     {
         if (originCell?.Chip != null)
-            StartCoroutine(TryConsumeMatch(originCell,damage));
+            StartCoroutine(TryConsumeMatch(originCell, damage));
     }
     public void StartTryConsumeMatch(Cell originCell)
     {

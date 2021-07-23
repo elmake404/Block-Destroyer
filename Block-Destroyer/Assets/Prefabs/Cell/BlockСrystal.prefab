@@ -77,7 +77,7 @@ MonoBehaviour:
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
   _hangTimer: 1
-  _colorId: 7
+  _colorId: -1
   Health: 1
   _namverOfCristall: 1
 --- !u!1001 &1724185378205635879
