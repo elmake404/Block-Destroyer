@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5187533013621474562}
   - component: {fileID: 8312632992155133304}
   m_Layer: 8
-  m_Name: Block
+  m_Name: Block 3 ALT 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,6 @@ MonoBehaviour:
   _animator: {fileID: 3655370082890353491}
   _hangTimer: 1.5
   _colorId: 1
-  _isConsume: 0
   Health: 1
 --- !u!114 &8312632992155133304
 MonoBehaviour:
@@ -87,6 +86,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 369879317441190002}
     m_Modifications:
+    - target: {fileID: 52204373710287258, guid: 5faf47680f9a1d846af5735d0021756e,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -387298209978578080, guid: 60643910630e27c4991b41ba52cd71e5,
+        type: 3}
     - target: {fileID: 1936050214950494563, guid: 5faf47680f9a1d846af5735d0021756e,
         type: 3}
       propertyPath: m_Name
