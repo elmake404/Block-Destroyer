@@ -9879,17 +9879,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9024456558217270553, guid: 66d86a35386842644bbe3b2705964d06,
-        type: 3}
-      propertyPath: _chipsPrefans.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024456558217270553, guid: 66d86a35386842644bbe3b2705964d06,
-        type: 3}
-      propertyPath: _chipsPrefans.Array.data[2]
-      value: 
-      objectReference: {fileID: -5187533013621474562, guid: ded8ce1a473873745a748d4a18088047,
-        type: 3}
     - target: {fileID: 9024456558217270554, guid: 66d86a35386842644bbe3b2705964d06,
         type: 3}
       propertyPath: m_RootOrder
