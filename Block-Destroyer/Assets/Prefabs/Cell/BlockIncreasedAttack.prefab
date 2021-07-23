@@ -81,7 +81,7 @@ MonoBehaviour:
   Health: 1
   _timeBoost: 3
   _increasedAttackPower: Infinity
-  _increasedAttackSpeed: 0.1
+  _increasedAttackSpeed: 0.2
 --- !u!1001 &1724185378205635879
 PrefabInstance:
   m_ObjectHideFlags: 0
