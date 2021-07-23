@@ -98,13 +98,6 @@ public class PlayerMove : MonoBehaviour
     {
         Travel();
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Finish")
-        {
-            GameStage.Instance.ChangeStage(Stage.WinGame);
-        }
-    }
     private float GetPositionAbscissa(float X)
     {
         if (_widthFarPoint < X)
