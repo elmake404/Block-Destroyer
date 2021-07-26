@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5187533013621474562}
   - component: {fileID: 8312632992155133304}
   m_Layer: 8
-  m_Name: Block 3
+  m_Name: Block X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
     type: 3}
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 3655370082890353491}
-  _hangTimer: 1
+  _hangTimer: 1.75
   _colorId: 4
   Health: Infinity
 --- !u!114 &8312632992155133304

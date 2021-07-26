@@ -63,9 +63,8 @@ MonoBehaviour:
     type: 3}
   _moveChip: {fileID: 8312632992155133304}
   _animator: {fileID: 5094515220404970880}
-  _hangTimer: 1.5
+  _hangTimer: 1.75
   _colorId: 2
-  _isConsume: 0
   Health: 1
 --- !u!114 &8312632992155133304
 MonoBehaviour:
