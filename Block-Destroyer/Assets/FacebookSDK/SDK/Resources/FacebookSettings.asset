@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 193104356117339
   appLabels:
-  - App Name
+  - BlockDriller
   cookie: 1
   logging: 1
   status: 1
