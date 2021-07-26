@@ -11,6 +11,8 @@ public class PlayerAtack : MonoBehaviour
     [SerializeField]
     private LayerMask _layerMask;
     private PlayerMove _playerMove;
+    [SerializeField]
+    private PlayerLife _playerLife;
 
     [SerializeField]
     private float _radiusAtack, _timeBeforeAttack, _attackDamage, _attackDistence = 0.8f;
@@ -72,7 +74,9 @@ public class PlayerAtack : MonoBehaviour
     {
         _isBoost = true;
         _particleBoost.Play();
+        _playerLife.IsInvulnerability = true;
         yield return new WaitForSeconds(time);
+        _playerLife.IsInvulnerability = false;
         _particleBoost.Stop();
         _isBoost = false;
     }

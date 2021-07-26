@@ -16,15 +16,15 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 193104356117339
+  - 0
   appLabels:
-  - BlockDriller
+  - App Name
   cookie: 1
   logging: 1
   status: 1
   xfbml: 0
   frictionlessRequests: 1
-  androidKeystorePath: C:\Users\Admin\Desktop\Unity\Key
+  androidKeystorePath: 
   iosURLSuffix: 
   appLinkSchemes:
   - list: []

@@ -38,6 +38,8 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField]
     private float _speed, _Offset;
+    [SerializeField]
+    private bool _isTravel;
     private float _widthFarPoint
     { get { return _startPos.x + _Offset; } }
     private float _widthNearPoint
@@ -84,8 +86,8 @@ public class PlayerMove : MonoBehaviour
                     }
 
 
-                    _targetPosPlayer = _currentPosPlayer + ((_cam.transform.position - ((ray.direction) *
-                            ((_cam.transform.position - transform.position).z / ray.direction.z))) - _startTouchPos);
+                    _targetPosPlayer = (_currentPosPlayer + ((_cam.transform.position - ((ray.direction) *
+                            ((_cam.transform.position - transform.position).z / ray.direction.z))) - _startTouchPos));
                 }
             }
             else
@@ -116,9 +118,15 @@ public class PlayerMove : MonoBehaviour
     private void Travel()
     {
         Vector3 target = transform.position;
+        if (Mathf.Abs(_targetPosPlayer.x - transform.position.x) > 0.3f)
+            _isTravel = true;
+        else if (Mathf.Abs(_targetPosPlayer.x - transform.position.x) < 0.04f)
+            _isTravel = false;
 
-        if (Mathf.Abs(_targetPosPlayer.x - transform.position.x) > 0.05f)
+        if (_isTravel)
+        {
             target.x = GetPositionAbscissa(_targetPosPlayer.x);
+        }
 
 
         Vector3 direction = (target - transform.position).normalized * _speed;
@@ -127,7 +135,8 @@ public class PlayerMove : MonoBehaviour
         _rbMain.velocity = _legs.CheckDirection(direction);
 
         DirectionTravel = direction;
-        if (Mathf.Abs(_targetPosPlayer.x - transform.position.x) > 0.05f)
+
+        if (_isTravel)
             RotationModel(DirectionTravel.x);
         else
             RotationModel(0);

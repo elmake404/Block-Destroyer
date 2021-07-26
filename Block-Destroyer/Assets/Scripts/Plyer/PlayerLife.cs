@@ -10,13 +10,15 @@ public class PlayerLife : MonoBehaviour
     private Collider _coliderMain;
     [SerializeField]
     private Rigidbody _rbMain;
+
+    public bool IsInvulnerability;
     private void OnTriggerEnter(Collider other)
     {
         Chip chip = other.GetComponent<Chip>();
 
         if (chip != null)
         {
-            if (chip.tag == "Bonus")
+            if (chip.tag == "Bonus"||IsInvulnerability)
             {
                 MatchSystem.Instance.StartTryConsumeMatch(chip.Cell,float.PositiveInfinity);
             }
@@ -36,7 +38,6 @@ public class PlayerLife : MonoBehaviour
         _rbMain.isKinematic = true;
         StartCoroutine(ActivationAnimation());
         enabled = false;
-
     }
     private IEnumerator ActivationAnimation()
     {
