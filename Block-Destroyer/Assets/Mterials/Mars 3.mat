@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mars 2
+  m_Name: Mars 3
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _NORMALMAP _PARALLAXMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 2
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 813003187ef85c34bbb809564f3c695f, type: 3}
+        m_Texture: {fileID: 2800000, guid: d3b85b8b0a048644db0f0ddab29c3782, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DepthTexture:
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: 0c33c6f699d4d1d4b88d58ce74e002e6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 57ebb5f49d760e8479d99e820ec5fafd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -124,7 +124,7 @@ Material:
     m_Colors:
     - _BackgroundColor: {r: 1, g: 1, b: 1, a: 1}
     - _CenterColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.3732039, g: 0.3176471, b: 1, a: 1}
+    - _Color: {r: 0, g: 1, b: 0.809736, a: 1}
     - _ColorMain: {r: 1, g: 0.5921569, b: 0.20392159, a: 1}
     - _EmissionColor: {r: 0, g: 0.009068237, b: 0.013602355, a: 1}
     - _GrabTexture_TexelSize: {r: 1, g: 1, b: 1, a: 1}
