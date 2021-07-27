@@ -22,7 +22,7 @@ public class FacebookManager : MonoBehaviour
             // Already initialized, signal an app activation App Event
             FB.ActivateApp();
         }
-        DontDestroyOnLoad(this );
+        DontDestroyOnLoad(this);
     }
 
     private void InitCallback()
@@ -61,7 +61,7 @@ public class FacebookManager : MonoBehaviour
 
         FB.LogAppEvent(
             "Game start",
-            parameters : tutParms);
+            parameters: tutParms);
     }
     public void LevelStart(int lvl)
     {
@@ -70,7 +70,7 @@ public class FacebookManager : MonoBehaviour
 
         FB.LogAppEvent(
             "Level start",
-            parameters : tutParms);
+            parameters: tutParms);
     }
     public void LevelWin(int lvl)
     {
@@ -79,7 +79,7 @@ public class FacebookManager : MonoBehaviour
 
         FB.LogAppEvent(
             "Level win",
-            parameters : tutParms);
+            parameters: tutParms);
     }
     public void LevelFail(int lvl)
     {
@@ -88,7 +88,7 @@ public class FacebookManager : MonoBehaviour
 
         FB.LogAppEvent(
             "Level fail",
-            parameters : tutParms);
+            parameters: tutParms);
     }
     public void MainMenu()
     {

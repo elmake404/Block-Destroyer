@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Robusta;
 
 public static class GameStageEvent
 {
@@ -49,6 +50,8 @@ public class GameStage : MonoBehaviour
                 _canvasManager.GameStageWindow(StageGame);
                 _isGameStart = true;
                 FacebookManager.Instance.GameStart();
+                RobustaAnalytics.SetLevel(PlayerPrefs.GetInt("Level"));
+
                 break;
 
             case Stage.StartLevel:
@@ -65,6 +68,7 @@ public class GameStage : MonoBehaviour
                 {
                     _canvasManager.GameStageWindow(StageGame);
                     FacebookManager.Instance.LevelWin(PlayerPrefs.GetInt("Level"));
+                    RobustaAnalytics.SetLevel(PlayerPrefs.GetInt("Level"));
 
                     PlayerPrefs.SetInt("Scenes", PlayerPrefs.GetInt("Scenes") + 1);
                     PlayerPrefs.SetInt("Level", PlayerPrefs.GetInt("Level") + 1);
